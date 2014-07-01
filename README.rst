@@ -67,8 +67,7 @@ Should open your browser with the built documentation.
 What isn't done
 ===============
 
-- It would have been nice to implement a more direct way to edit a game, specific
-frames or rolls.
+- It would have been nice to implement a more direct way to edit a game, specific frames or rolls.
 - Define custom error messages so that errors would be more easily understood.
 - More unit tests for negative cases.
 
