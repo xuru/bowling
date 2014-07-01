@@ -1,14 +1,17 @@
+
 ============
 Introduction
 ============
 
 This is an exercise in creating a REST API that simulates a bowling score board.
 
+
 ------------
 Requirements
 ------------
 
-* Python 2.6 or later
+- Python 2.6 or later
+
 
 ============
 Installation
@@ -23,13 +26,17 @@ To run the api, you will need to install the pre-requisites::
 Configuration
 =============
     
+
+-------------
 API Endpoints
 -------------
 
-* "/games" lists games; POST to create
-* "/games/<id>" get a specific game including the running score totals, DELETE to delete
-* "/games/<id>/roll" PUT to add a pin count to the current frame
+- "/games" lists games; POST to create
+- "/games/<id>" get a specific game including the running score totals, DELETE to delete
+- "/games/<id>/roll" PUT to add a pin count to the current frame
 
+
+----
 Demo
 ----
 
@@ -44,6 +51,8 @@ to run the api server, and::
 
 to run a simple example of scoring a bowling game.
 
+
+-------------
 Documentation
 -------------
 
@@ -53,6 +62,8 @@ To view the documentation::
 
 Should open your browser with the built documentation.
 
+
+===============
 What isn't done
 ===============
 
