@@ -43,6 +43,7 @@ Demo
 To run the demo, once you have the pre-requisites installed (preferrably in a
 virtual environment) you can::
 
+    make db
     make serve
 
 to run the api server, and::
