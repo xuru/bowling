@@ -16,7 +16,17 @@ class GamesResource(Resource):
 
     @marshal_with(app.fields.game_fields)
     def post(self):
-        """Create a new game.
+        """
+        Create a new game.  You will need to send a list of players in the data payload.
+
+        The JSON data should look like::
+
+            {
+                'players': [
+                    'player1',
+                    'player2',
+                ]
+            }
         """
         args = self.parser.parse_args()
         if not args["players"]:
@@ -28,7 +38,8 @@ class GamesResource(Resource):
 
     @marshal_with(app.fields.game_fields)
     def get(self):
-        """Get all games in the system.
+        """
+        Get all games in the system.
         """
         return list(Game.query.all()), 200
 
@@ -36,6 +47,9 @@ class GamesResource(Resource):
 class GameResource(Resource):
     @marshal_with(app.fields.game_fields)
     def get(self, game_id):
+        """
+        Get a game with the spefic id <game_id>
+        """
         game = Game.query.filter_by(id=game_id).first_or_404()
 
         # make sure it's scored before returning it...
@@ -43,6 +57,9 @@ class GameResource(Resource):
         return game
 
     def delete(self, game_id):
+        """
+        Delete a game with the spefic id <game_id>
+        """
         if not game_id:
             abort(400)
         else:

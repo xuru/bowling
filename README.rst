@@ -10,7 +10,7 @@ This is an exercise in creating a REST API that simulates a bowling score board.
 Requirements
 ------------
 
-- Python 2.6 or later
+- Python 2.7 or later
 
 
 ============
@@ -43,12 +43,11 @@ Demo
 To run the demo, once you have the pre-requisites installed (preferrably in a
 virtual environment) you can::
 
-    make db
-    make serve
+    python ./manage.py serve &
 
 to run the api server, and::
 
-    make demo
+    python ./demo.py
 
 to run a simple example of scoring a bowling game.
 
@@ -59,7 +58,7 @@ Documentation
 
 To view the documentation::
 
-    make docs
+    python ./manage.py docs
 
 Should open your browser with the built documentation.
 

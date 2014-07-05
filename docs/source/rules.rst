@@ -27,7 +27,7 @@ The Spare
 - and the minimum is 10 (a spare followed by a gutter ball).
 
 The Tenth Frame
-===============
+---------------
 - If you throw a strike on your first ball in the tenth frame, you need two more shots to determine the total value of the strike.
 - If you throw a spare on your first two balls in the tenth frame, you need one more shot to determine the total value of the spare. This is called a fill ball.
 - If you throw an open frame in the tenth frame, you won't get a third shot.

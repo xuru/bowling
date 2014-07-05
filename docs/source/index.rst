@@ -6,14 +6,22 @@
 Welcome to Bowling's documentation!
 ===================================
 
-Contents:
+What is REST?
 
 .. toctree::
    :maxdepth: 2
 
    REST
+
+Bowling API Documentation
+=========================
+
+.. toctree::
+   :maxdepth: 2
+
    rules
    api
+   modules
 
 
 Indices and tables

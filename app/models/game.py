@@ -1,11 +1,19 @@
 from app import db
 from app.errors import APISyntaxError
 from app.models.player import Player
+from app.models.base import BaseMixin
 
 
-class Game(db.Model):
+class Game(db.Model, BaseMixin):
     """
     Container that holds the games players (along with those players frames and rolls)
+
+    .. py:attribute:: players
+
+        The players for this game.
+
+        :type: :py:class:`app.models.player.Player`
+
     """
     id = db.Column(db.Integer, primary_key=True)
     players = db.relationship(
@@ -27,15 +35,15 @@ class Game(db.Model):
         self.save()
 
     def score(self):
+        """
+        Score all the frames, and save them to the db.
+        """
         for player in self.players:
             player.score()
 
-    def save(self):
-        db.session.commit()
-
     def delete(self):
+        """
+        Delete this game from the database
+        """
         db.session.delete(self)
         db.session.commit()
-
-    def __repr__(self):
-        return '<Game %r>' % self.id

@@ -12,6 +12,17 @@ class RollResource(Resource):
 
     @marshal_with(app.fields.roll_fields)
     def put(self, game_id):
+        """
+        Add a roll in the game <game_id> for a specific player (in the json data)
+
+        The JSON data should look like::
+
+            {
+                'pins': '8',
+                'player_id': '12'
+            }
+
+        """
         args = self.parser.parse_args()
         pins = int(args['pins'])
         player_id = args['player_id']

@@ -1,12 +1,24 @@
 from app import db
 from app.models import Frame
+from app.models.base import BaseMixin
 
 
-class Player(db.Model):
+class Player(db.Model, BaseMixin):
     """
     The player in a game of bowling.
-    name: The players name
-    frames: The bowling frames that may or may not be scored yet.
+
+    .. py:attribute:: name
+
+        The players name
+
+        :type: str
+
+    .. py:attribute:: frames
+
+        The bowling frames that may or may not be scored yet.
+
+        :type: :py:class:`app.models.frame.Frame`
+
     """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
@@ -24,9 +36,6 @@ class Player(db.Model):
         while len(list(self.frames.all())) != 10:
             Frame(self, index).save()
             index += 1
-
-    def save(self):
-        db.session.commit()
 
     def score(self):
         """
@@ -66,6 +75,9 @@ class Player(db.Model):
     def roll(self, pins):
         """
         Does some initial validation before calling the current frames roll() method.
+
+        :param int pins: The number of pins knocked down.
+
         """
         if pins > 10 or pins < 0:
             raise Exception("Wrong number of pins")
